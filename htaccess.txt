@@ -1,0 +1,10 @@
+# Přejmenuj tento soubor na .htaccess (s tečkou na začátku) a nahraj do hlavní složky webu.
+RewriteEngine On
+
+# Staré domény přesměruj trvale na prelol.eu (upravte podle toho, které ještě máš)
+RewriteCond %{HTTP_HOST} ^(www\.)?(niclol\.eu|nic\.lol)$ [NC]
+RewriteRule ^(.*)$ https://prelol.eu/$1 [R=301,L]
+
+# Vždy HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
