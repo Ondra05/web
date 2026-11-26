@@ -205,7 +205,7 @@ if(document.getElementById("up"))setInterval(()=>{const g=cps()/10;S.k+=g;S.t+=g
 /* ledomrunkalis */
 const LV=["Jemný ledomrunkalis ★☆☆","Plný ledomrunkalis ★★☆","Hluboký ledomrunkalis ★★★"];
 $("#step").onclick=()=>{try{const C=new(window.AudioContext||window.webkitAudioContext)(),l=Math.floor(C.sampleRate*.5),b=C.createBuffer(1,l,C.sampleRate),d=b.getChannelData(0);for(let i=0;i<l;i++)d[i]=(Math.random()*2-1)*Math.exp(-i/l*6)*(Math.random()>.97?1:.22);const s=C.createBufferSource(),f=C.createBiquadFilter();s.buffer=b;f.type="bandpass";f.frequency.value=700+Math.random()*800;s.connect(f);f.connect(C.destination);s.start();setTimeout(()=>C.close(),700)}catch(e){}$("#stepmsg").textContent=R(LV)};
-$("#nf").onsubmit=e=>{e.preventDefault();toast("✅ Přihlášeno (ukázkově).");e.target.reset()};
+$("#nf").onsubmit=e=>{e.preventDefault();toast("Odběr zatím nefunguje, nic se neodeslalo.");e.target.reset()};
 /* cookies */
 const CK="nic_cookie_consent",ck=$("#ck");
 function ckGet(){try{return JSON.parse(localStorage.getItem(CK))}catch(e){return null}}
