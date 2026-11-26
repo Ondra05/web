@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="cs"><head><meta charset="utf-8"><script>(function(){var p=location.pathname,n=p.replace(/\/index(\.html)?$/,'/').replace(/\.html$/,'');if(n!==p)history.replaceState(null,'',n+location.search+location.hash)})()</script><script>(function(){var m={"home": "/", "bankovky": "/bankovky", "osa": "/casova-osa", "hra": "/hra", "ledomrunkalis": "/ledomrunkalis", "kontakt": "/kontakt"},h=location.hash.slice(1);if(m[h]&&h!=="home")location.replace(m[h])})()</script>
+<html lang="cs"><head><meta charset="utf-8"><script>document.documentElement.classList.add("js")</script><script>(function(){var p=location.pathname,n=p.replace(/\/index(\.html)?$/,'/').replace(/\.html$/,'');if(n!==p)history.replaceState(null,'',n+location.search+location.hash)})()</script><script>(function(){var m={"home": "/", "bankovky": "/bankovky", "osa": "/casova-osa", "hra": "/hra", "ledomrunkalis": "/ledomrunkalis", "kontakt": "/kontakt"},h=location.hash.slice(1);if(m[h]&&h!=="home")location.replace(m[h])})()</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Zajímavosti o české koruně, bankovkách a lidech na nich. Hry, časová osa a příběhy peněz.">
 <title>NIC – Not In Coins | Zajímavosti o české koruně a bankovkách</title><link rel="canonical" href="https://niclol.eu/"><meta name="robots" content="index,follow"><meta property="og:title" content="NIC – Not In Coins | Zajímavosti o české koruně a bankovkách"><meta property="og:description" content="Zajímavosti o české koruně, bankovkách a lidech na nich. Hry, časová osa a příběhy peněz."><meta property="og:type" content="website"><meta property="og:url" content="https://niclol.eu/"><meta property="og:image" content="https://niclol.eu/og-default.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="NIC – Not In Coins"><meta property="og:site_name" content="NIC – Not In Coins"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="NIC – Not In Coins | Zajímavosti o české koruně a bankovkách"><meta name="twitter:image" content="https://niclol.eu/og-default.png"><meta property="og:locale" content="cs_CZ">
 <link rel="icon" type="image/png" href="/favicon.png"><link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0a0a0c;--s1:#131316;--s2:#1c1c21;--ln:#2c2c33;--fg:#fff;--m:#d0d0d8;--g:#3f8f5a;--r:#c0463f;--p:#8465b5;--o:#dc8a2e;--b:#5580b0;--ac:#8465b5;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
@@ -30,10 +31,10 @@ main{max-width:1080px;margin:auto;padding:0 5vw}
 body{background:transparent}#scene{position:fixed;inset:0;width:100%;height:100%;z-index:-1;opacity:.6;pointer-events:none}.z{animation:zz 22s ease-in-out infinite alternate}@keyframes zz{to{transform:scale(1.1)}}
 .sky{display:none}.tl .ev{text-shadow:0 0 14px #000}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-[data-a]{opacity:0;transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1),clip-path 1s}
-[data-a=l]{transform:translateX(-70px)}[data-a=r]{transform:translateX(70px)}[data-a=d]{transform:translateY(-50px)}
-[data-a=x]{transform:scale(.7)}
-[data-a].in{opacity:1;transform:none}
+.js [data-a]{opacity:0;transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1),clip-path 1s}
+.js [data-a=l]{transform:translateX(-70px)}.js [data-a=r]{transform:translateX(70px)}.js [data-a=d]{transform:translateY(-50px)}
+.js [data-a=x]{transform:scale(.7)}
+.js [data-a].in{opacity:1;transform:none}
 .note{position:relative;min-height:92vh;display:flex;align-items:center;margin:0 -5vw;padding:40px 5vw;overflow:hidden;cursor:pointer}.note:nth-child(even){justify-content:flex-end}
 .nb{position:absolute;inset:0;z-index:-1}.nb svg{width:100%;height:100%;animation:zn 26s ease-in-out infinite alternate}@keyframes zn{from{transform:scale(1)}to{transform:scale(1.14) translate(-1.5%,1.5%)}}
 .nb::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,12,.7),transparent 60%)}.note:nth-child(even) .nb::after{background:linear-gradient(270deg,rgba(10,10,12,.7),transparent 60%)}
@@ -56,7 +57,7 @@ footer{border-top:1px solid var(--ln);text-align:center;padding:2.5rem 5vw 3rem;
 #ck{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:min(560px,calc(100% - 24px));z-index:120;background:var(--s1);border:1px solid var(--ac);padding:18px;display:none}#ck.show{display:block}
 #ck p{margin:6px 0 12px;font-size:.95rem}#ck .opts{display:none}#ck.more .opts{display:block;margin-bottom:10px}#ck label{display:flex;justify-content:space-between;padding:5px 0}#ck input{width:auto;margin:0}
 #ck .bt{display:flex;gap:8px;flex-wrap:wrap}#ck .btn{flex:1;padding:10px;font-size:.8rem}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-a]{opacity:1;transform:none;clip-path:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js [data-a]{opacity:1;transform:none;clip-path:none}}
 @media(hover:hover) and (pointer:fine){html,html *{cursor:none!important}#dot{display:block}}
 #dot{display:none;position:fixed;left:0;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--ac);pointer-events:none;z-index:300;transition:background .4s,width .2s,height .2s,margin .2s;box-shadow:0 0 10px var(--ac)}
 #dot.h{width:16px;height:16px;margin:-8px 0 0 -8px}
@@ -67,6 +68,7 @@ footer{border-top:1px solid var(--ln);text-align:center;padding:2.5rem 5vw 3rem;
 .hero svg.bg{opacity:.75;transform:scale(1.02);animation:zm2 40s ease-in-out infinite alternate}@keyframes zm2{to{transform:scale(1.1)}}
 .icefix{position:fixed;inset:0;z-index:-1;pointer-events:none}.icefix svg{width:100%;height:100%}@keyframes spin{to{transform:rotate(360deg)}}
 html{scroll-snap-type:y proximity}.note,.hero{scroll-snap-align:start}
+#nl>.note:first-child,#tl>.note:first-child{scroll-snap-align:none}
 .nx{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;font-size:1.4rem;line-height:1;color:#fff;background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.04));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:3px solid rgba(255,255,255,.4);box-shadow:inset 0 2px 0 rgba(255,255,255,.4),0 10px 30px rgba(0,0,0,.5),0 0 0 1px var(--ac);cursor:pointer;z-index:3;animation:bob 2s ease-in-out infinite;transition:border-color .3s}
 .nx:hover{border-color:var(--ac)}@keyframes bob{50%{transform:translate(-50%,8px)}}
 @media(max-width:700px){.note .nx{position:static;display:block;margin:14px auto 0;transform:none;animation:none}}
@@ -95,7 +97,7 @@ section.page>h1{font-size:clamp(2rem,5vw,3.2rem);margin:3rem 0 1rem}
 <main>
 <section class="page show" id="home">
 <div class="hero"><svg class="bg" id="hbg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"></svg>
-<p style="letter-spacing:.3em;font-size:.85rem" data-a="d">PŘÍBĚH ČESKÉ KORUNY</p><h1 data-a="l">Peníze,<br>které mluví.</h1>
+<p style="letter-spacing:.3em;font-size:.85rem" data-a="d">PŘÍBĚH ČESKÉ KORUNY</p><h1>Peníze,<br>které mluví.</h1>
 <p class="glass" data-a="r">Z papíru, barev a tváří, které se z bankovek dívají na miliony peněženek. Nejde o historii z učebnice, ale o zajímavosti, které se vám budou hodit na večeři.</p>
 <p data-a="x"><a class="btn" href="/bankovky">Prohlédnout bankovky</a> &nbsp;<a class="btn g" href="/hra">Zahrát si</a></p></div>
 <h2 data-a="l">Co znamená NIC?</h2>
@@ -156,7 +158,7 @@ let gi=0;[...s.querySelectorAll(".tgrp")].slice(1).forEach(g=>{gi+=Math.min(1,Ma
 const BI=[0,1,2,2];let i=Math.min(3,Math.floor(gi)),p=i>=3?0:gi-i;const A=BG[BI[i]],B=BG[BI[Math.min(3,i+1)]];if(A===B)p=0;
 cx.drawImage(A,...cov(A));if(p>0){const[dx,dy,dw,dh]=cov(B),cols=Math.ceil(cv.width/BS),k=B.width/dw;nz.forEach((n,q)=>{if(n<p){const x=(q%cols)*BS,y=Math.floor(q/cols)*BS;cx.drawImage(B,(x-dx)*k,(y-dy)*k,BS*k,BS*k,x,y,BS,BS)}})}
 const gx=(tt/35)%(cv.width+500)-250,gr=cx.createLinearGradient(gx-130,0,gx+130,0);gr.addColorStop(0,"rgba(255,255,255,0)");gr.addColorStop(.5,"rgba(255,255,255,.1)");gr.addColorStop(1,"rgba(255,255,255,0)");cx.fillStyle=gr;cx.fillRect(0,0,cv.width,cv.height)}
-function loop(t){tt=t;tdraw();requestAnimationFrame(loop)}requestAnimationFrame(loop);
+function loop(t){tt=t;tdraw();requestAnimationFrame(loop)}if(document.getElementById("tbg"))requestAnimationFrame(loop);
 addEventListener("resize",()=>{nz=[]});
 /* scény na pozadí */
 const ar=(x,y,w,h)=>`M${x} ${y}V${y-h}Q${x+w/2} ${y-h-w} ${x+w} ${y-h}V${y}`;
@@ -199,7 +201,7 @@ $("#mint").onclick=()=>{S.k+=S.cl;S.t+=S.cl;draw()};
 document.addEventListener("click",e=>{const b=e.target.closest("button[data-i],button[data-c]");if(!b)return;
 if(b.dataset.i!==undefined){const i=+b.dataset.i,c=cost(U[i][2],S.u[i]);if(S.k>=c){S.k-=c;S.u[i]++}}else{const i=+b.dataset.c,c=cost(C[i][2],S.cu[i]);if(S.k>=c){S.k-=c;S.cu[i]++;S.cl+=C[i][3]}}draw()});
 $("#bst").onclick=()=>{S.bu=Date.now()+15000;S.bc=Date.now()+60000;toast("⚡ Příjem ×3 na 15 sekund");draw()};
-setInterval(()=>{const g=cps()/10;S.k+=g;S.t+=g;draw()},100);draw();
+if(document.getElementById("up"))setInterval(()=>{const g=cps()/10;S.k+=g;S.t+=g;draw()},100);draw();
 /* ledomrunkalis */
 const LV=["Jemný ledomrunkalis ★☆☆","Plný ledomrunkalis ★★☆","Hluboký ledomrunkalis ★★★"];
 $("#step").onclick=()=>{try{const C=new(window.AudioContext||window.webkitAudioContext)(),l=Math.floor(C.sampleRate*.5),b=C.createBuffer(1,l,C.sampleRate),d=b.getChannelData(0);for(let i=0;i<l;i++)d[i]=(Math.random()*2-1)*Math.exp(-i/l*6)*(Math.random()>.97?1:.22);const s=C.createBufferSource(),f=C.createBiquadFilter();s.buffer=b;f.type="bandpass";f.frequency.value=700+Math.random()*800;s.connect(f);f.connect(C.destination);s.start();setTimeout(()=>C.close(),700)}catch(e){}$("#stepmsg").textContent=R(LV)};
